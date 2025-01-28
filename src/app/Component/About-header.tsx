@@ -2,10 +2,6 @@
 
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import blog from "@/public/blog.png";
-import blogbook from "@/public/blog1.png";
-import mainlaptop from "@/public/mainlaptop.png";
-import shopheader from "@/public/shopheader.png";
 import { Search } from 'lucide-react';
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -25,7 +21,7 @@ const recentPosts: BlogPost[] = [
     title: "Going all-in with millennial design",
     date: "03 Aug 2022",
     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    image: mainlaptop,
+    image: "/mainlaptop.png",
     author: "Admin",
     category: "Design",
     slug: "millennial-design",
@@ -34,7 +30,7 @@ const recentPosts: BlogPost[] = [
     title: "Exploring new ways of decorating",
     date: "03 Aug 2022",
     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    image: blogbook,
+    image: "/blog1.png",
     author: "Admin",
     category: "Interior",
     slug: "exploring-decorating",
@@ -43,7 +39,7 @@ const recentPosts: BlogPost[] = [
     title: "Handmade pieces that took time to make",
     date: "03 Aug 2022",
     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    image: blog,
+    image: "/blog2.png",
     author: "Admin",
     category: "Handmade",
     slug: "handmade-pieces",
@@ -63,7 +59,7 @@ export default function BlogPostPage() {
     <>
       {/* Hero Section */}
       <div className="relative h-[300px] w-full">
-        <Image src={shopheader} alt="Shop Header" fill className="object-cover" priority />
+        <Image src={"/shopheader.png"} alt="Shop Header" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
           <div className="mb-4">
