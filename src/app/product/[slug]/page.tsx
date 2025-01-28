@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-function Page({ params }: { params: { id: string } }) {
+function Page({ params }: { params: { slug: string } }) {
   const [data, setData] = useState<any>(null);
 
   const addToCart = () => {
@@ -39,7 +39,7 @@ function Page({ params }: { params: { id: string } }) {
     // Fetch product data based on ID
     const fetchData = async () => {
       const dummyProduct = {
-        _id: params.id,
+        _id: params.slug,
         name: "Sample Product",
         imagePath: "/sample-image.jpg",
         price: 50,
@@ -48,7 +48,7 @@ function Page({ params }: { params: { id: string } }) {
     };
 
     fetchData();
-  }, [params.id]);
+  }, [params.slug]);
 
   return (
     <main>
