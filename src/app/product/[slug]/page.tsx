@@ -1,8 +1,10 @@
 "use client";
 
+import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
-function Page({ params }: { params: { slug: string } }) {
+function Page() {
+  const params = useParams()
   const [data, setData] = useState<any>(null);
 
   const addToCart = () => {
