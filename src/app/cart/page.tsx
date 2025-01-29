@@ -3,11 +3,22 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-
+interface P {
+  _id: string;
+  name: string;
+  imagePath: string;
+  price: number;
+  description: string;
+  discountPercentage?: number;
+  isFeaturedProduct?: boolean;
+  stockLevel?: number;
+  category?: string;
+  quantity: number;
+}
 
 
 function CartPage() {
-  const [cart, setCart] = useState<any[]>([]);
+  const [cart, setCart] = useState<P[]>([]);
 
   // Function to load cart from localStorage
   const loadCart = () => {

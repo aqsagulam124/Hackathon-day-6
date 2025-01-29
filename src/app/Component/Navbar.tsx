@@ -1,9 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Search } from 'lucide-react';
-import { Heart } from 'lucide-react';
-import { ShoppingCart } from 'lucide-react';
-import { User } from 'lucide-react';
+import { Heart, Search, ShoppingCart, User } from 'lucide-react';
+import Link from "next/link";
 
 export default function Navbar () {
     return(

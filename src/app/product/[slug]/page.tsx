@@ -3,24 +3,32 @@
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
+interface Product {
+  _id: string;
+  name: string;
+  imagePath: string;
+  price: number;
+}
+
+interface CartItem extends Product {
+  quantity: number;
+}
+
 function Page() {
-  const params = useParams()
-  const [data, setData] = useState<any>(null);
+  const params = useParams<{ slug: string }>();
+  const [data, setData] = useState<Product | undefined>(undefined);
 
   const addToCart = () => {
     if (!data) return;
 
-    const cartItem = {
-      id: data._id,
-      name: data.name,
-      imagePath: data.imagePath,
-      price: data.price,
+    const cartItem: CartItem = {
+      ...data,
       quantity: 1,
     };
 
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const cart: CartItem[] = JSON.parse(localStorage.getItem("cart") || "[]");
 
-    const existingItemIndex = cart.findIndex((item: any) => item.id === cartItem.id);
+    const existingItemIndex = cart.findIndex(item => item._id === cartItem._id);
 
     if (existingItemIndex >= 0) {
       cart[existingItemIndex].quantity += 1;
@@ -40,7 +48,7 @@ function Page() {
   useEffect(() => {
     // Fetch product data based on ID
     const fetchData = async () => {
-      const dummyProduct = {
+      const dummyProduct: Product = {
         _id: params.slug,
         name: "Sample Product",
         imagePath: "/sample-image.jpg",

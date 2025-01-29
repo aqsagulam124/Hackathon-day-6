@@ -4,7 +4,6 @@ import MainPage from "./Component/MainPage";
 import MobileNavbar from "./Component/MobilleNavbar";
 import NewArrivals from "./Component/NewArrivals";
 import OurBlogs from "./Component/OurBlogs";
-import { fetchData } from "../../scripts/importSanityData.mjs"
 
 export default async function Home() {
   return (

@@ -1,6 +1,6 @@
 // y jo mainy chatgpt sy kia wo code
 // lib/sanity/client.ts
-import sanityClient, { SanityClient } from "@sanity/client";
+import sanityClient from "@sanity/client";
 
 export const client = sanityClient({
   projectId: "xnl2cpgh",

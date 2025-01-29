@@ -33,7 +33,17 @@ export default async function Shop() {
         <section className="my-20">
             <div className="max-w-[84%] mx-auto">
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 mt-12">
-                    {product.map((item: any) => (
+                    {product.map((item: {
+                        _id: string;
+                        name: string;
+                        imagePath: string;
+                        price: number;
+                        description: string;
+                        discountPercentage?: number;
+                        isFeaturedProduct?: boolean;
+                        stockLevel?: number;
+                        category?: string;
+                    }) => (
                         <Link key={item._id} href={`/Shop/${item._id}`} passHref>
                             <div
                                 className="col-span-1 hover:opacity-75 hover:blur-0 flex items-center flex-col gap-2"
